@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <h1>HackerNews</h1>
-    <router-view/>
+    <div class="appWrapper">
+      <Navigation></Navigation>
+      <News></News>
+    </div>
   </div>
 </template>
 
 <script>
+import Navigation from './components/Navigation.vue'
+import News from './components/News.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navigation,
+    News
+  }
 }
 </script>
 
@@ -22,6 +31,10 @@ body {
 
 #app {
   color: #FAFAFA;
+}
+
+.appWrapper {
+  margin: 5% 10% 5% 10%;
 }
 
 </style>
