@@ -3,9 +3,8 @@
       <v-toolbar-title>HackerNews</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat>Home</v-btn>
-          <v-btn flat>New</v-btn>
-          <v-btn flat>Trending</v-btn>
+          <v-btn flat router-link to="/">Top Stories</v-btn>
+          <v-btn flat router-link to="/newstories">New Stories</v-btn>
       </v-toolbar-items>
   </v-toolbar>
 </template>

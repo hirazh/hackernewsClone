@@ -1,11 +1,5 @@
 <template>
 <v-container grid-list-xl>
-  <!--  
-  <ol>
-      <li v-for="(newsitem, index) in newsItems" :key="index">{{newsitem.title}}</li>
-  </ol>
-  -->
-  
   <v-layout row>
     <v-flex>
         <v-card light>
@@ -13,14 +7,15 @@
                 <v-list-tile>
                     <v-list-tile-content>
                         <v-list-tile-title>{{newsitem.title}}</v-list-tile-title>
-                        <v-list-tile-sub-title><a v-bind:href="newsitem.url">{{newsitem.url}}</a></v-list-tile-sub-title>
+                        <v-list-tile-sub-title>link: <a v-bind:href="newsitem.url">{{newsitem.url}}</a></v-list-tile-sub-title>
+                        <span><small>Score: {{newsitem.score}} | by: {{newsitem.by}} | {{newsItemDate(newsitem.time)}}</small></span>
+                        <span><small></small></span>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
         </v-card>
       </v-flex>
   </v-layout>
-  
 </v-container> 
 </template>
 
@@ -34,6 +29,13 @@ export default {
         return {
             newsID: [],
             newsItems: [],
+        }
+    },
+    // Change the date format from unix_timestamp
+    methods: {
+        newsItemDate: function(unixtimestamp) {
+            let date = new Date(unixtimestamp*1000)
+            return date.toDateString()
         }
     },
 
