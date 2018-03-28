@@ -1,13 +1,13 @@
 <template>
-  <v-container grid-list-xl>
+ 
   <v-layout row>
     <v-flex>
         <v-card light>
             <v-list two-line v-for="(newNewsitem, index) in newNewsItems" :key="index">
                 <v-list-tile>
-                    <v-list-tile-content>
+                    <v-list-tile-content class="news-text">
                         <v-list-tile-title>{{newNewsitem.title}}</v-list-tile-title>
-                        <v-list-tile-sub-title>link: <a v-bind:href="newNewsitem.url">{{newNewsitem.url}}</a></v-list-tile-sub-title>
+                        <v-list-tile-sub-title><label>link: </label><a v-bind:href="newNewsitem.url">{{newNewsitem.url}}</a></v-list-tile-sub-title>
                         <span><small>Score: {{newNewsitem.score}} | by: {{newNewsitem.by}} | {{newsItemDate(newNewsitem.time)}}</small></span>
                         <span><small></small></span>
                     </v-list-tile-content>
@@ -16,7 +16,7 @@
         </v-card>
       </v-flex>
   </v-layout>
-</v-container> 
+
 </template>
 
 <script>
@@ -54,5 +54,15 @@ export default {
 </script>
 
 <style>
+.news-text {
+    font-family: 'Roboto', sans-serif;
+}
 
+.news-text span, label {
+    color: #90A4AE;
+}
+
+.news-text a {
+    color: #E64A19;
+}
 </style>

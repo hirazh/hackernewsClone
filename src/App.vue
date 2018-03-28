@@ -4,6 +4,9 @@
       <Navigation></Navigation>
       <router-view></router-view>
     </div>
+    <footer>
+      <a href="https://news.ycombinator.com/">HackerNews</a>
+    </footer>
   </div>
 </template>
 
@@ -30,7 +33,7 @@ body {
   border: 0;
   background-color: #E64A19;
 }
-
+ 
 #app {
   color: #FAFAFA;
 }
@@ -39,4 +42,15 @@ body {
   margin: 5% 10% 5% 10%;
 }
 
+footer {
+   text-align: center;
+   padding: 20px;
+   font-family: 'Roboto', sans-serif;
+   color: #fafafa;
+   letter-spacing: 2px;
+ }
+
+ footer a {
+   color: #fafafa;
+ }
 </style>
